@@ -11,16 +11,6 @@
 		body {
 			font-family: 'Quicksand', sans-serif;
 		}
-		#rec_container_section{
-			width: 100%;
-		}
-		#rec{
-			background-color: #000;
-	    width: 80%;
-	    height: 50%;
-	    padding: 0px;
-	    position: fixed; /* fixed or static */
-		}
 	</style>
 </head>
 
@@ -83,10 +73,7 @@ function init() {
 	container.appendChild( renderer.domElement );
 	stats = new Stats();
 	container.appendChild( stats.dom );
-	//document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-	//document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-	//document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-	//
+
 	window.addEventListener( 'resize', onWindowResize, false );
 }
 function onWindowResize() {
@@ -96,30 +83,6 @@ function onWindowResize() {
 	camera.updateProjectionMatrix();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 }
-//
-function onDocumentMouseDown( event ) {
-	event.preventDefault();
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.addEventListener( 'mouseout', onDocumentMouseOut, false );
-	mouseXOnMouseDown = event.clientX - windowHalfX;
-	targetRotationOnMouseDown = targetRotation;
-}
-function onDocumentMouseMove( event ) {
-	mouseX = event.clientX - windowHalfX;
-	targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.02;
-}
-function onDocumentMouseUp( event ) {
-	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
-}
-function onDocumentMouseOut( event ) {
-	document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.removeEventListener( 'mouseout', onDocumentMouseOut, false );
-}
-//
 function animate() {
 	requestAnimationFrame( animate );
 	stats.begin();
@@ -143,17 +106,12 @@ eventSource.addEventListener('input', function(e) {
 	if(parsedData.data == "X" && current != "X"){
 		targetRotationx = 1.5;
 		targetRotationy -= 1.5;
-		//targetRotationz = 1.5 - targetRotationz;
 	} else if(parsedData.data == "Y" && current != "Y"){
 		targetRotationx -= 1.5;
 		targetRotationy = 1.5;
-		//targetRotationz = 1.5 - targetRotationz;
 	} else if(parsedData.data == "Z" && current != "Z"){
 		targetRotationx -= 1.5;
 		targetRotationy = 1.5;
-		//targetRotationx = 1.5 - targetRotationx;
-		//targetRotationy = 1.5 - targetRotationy;
-		//targetRotationz = 1.5 + targetRotationz;
 	}
 	current = parsedData.data;
 }, false);
