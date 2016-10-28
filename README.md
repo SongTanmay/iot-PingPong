@@ -8,3 +8,14 @@ In this project, input is taken from [Flora 9DoF IMU](https://www.adafruit.com/p
 Visualization:
 
 Visualization is achieved by creating a cube with [threejs](https://threejs.org/). In previous project I have used interactive cubes build by webgl whereas here I am using simple geometrical triangles to create a face/square. Then with such six faces constructed cube.
+
+Photographs:
+
+- Flora 9DoF IMU
+![Flora 9DoF IMU](https://github.com/SongTanmay/iot-PingPong/blob/master/photographs/IMG_1046.JPG)
+
+- All the green wires goes to SparkFun Large Digit Driver.
+![board](https://github.com/SongTanmay/iot-PingPong/blob/master/photographs/WhatsApp%20Image%202016-10-27%20at%206.52.59%20PM.jpeg)
+
+- SparkFun Large Digit Driver and 7-Segment Display - 6.5" (Red)
+![SparkFun Large Digit Driver and 7-Segment Display - 6.5" (Red)](https://github.com/SongTanmay/iot-PingPong/blob/master/photographs/WhatsApp%20Image%202016-10-27%20at%206.54.02%20PM.jpeg)
